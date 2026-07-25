@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deepesh Kumar Pankaj — Web Developer & Builder</title>
+  <meta name="description" content="Deepesh Kumar Pankaj — BCA student at LNCT University, Bhopal. Builds real web products: HealthAI, Sathi, Fiira, DP Jewels. JavaScript · Node.js · Learning React." />
+  <meta property="og:title" content="Deepesh Kumar Pankaj — Web Developer & Builder" />
+  <meta property="og:description" content="Builds real products. BCA student at LNCT Bhopal. JavaScript · Node.js · AI-integrated web apps." />
+  <meta property="og:image" content="image/profile.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#191714" />
+  <link rel="icon" href="image/profile.jpg" type="image/jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="image/profile.jpg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav" aria-label="Main navigation">
+  <div class="nav-wrap">
+    <a href="#top" class="nav-logo" aria-label="Back to top">
+      <span class="logo-initials">DKP</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#projects">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#achievements">Events</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="mailto:deepeshkumar79239@gmail.com" class="nav-cta" id="nav-contact-btn">Get in touch</a>
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-drawer" id="navDrawer" aria-hidden="true">
+    <a href="#about">About</a>
+    <a href="#projects">Work</a>
+    <a href="#skills">Skills</a>
+    <a href="#achievements">Events</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="top" class="hero" aria-label="Introduction">
+  <div class="hero-bg-grid" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <div class="hero-photo-col">
+      <div class="hero-photo-frame">
+        <img
+          src="image/profile.jpg"
+          alt="Deepesh Kumar Pankaj"
+          class="hero-photo"
+          width="320"
+          height="320"
+          fetchpriority="high"
+        />
+        <div class="hero-photo-border" aria-hidden="true"></div>
+      </div>
+    </div>
+    <div class="hero-copy">
+      <div class="hero-badge">
+        <span class="badge-dot" aria-hidden="true"></span>
+        Available for collaborations
+      </div>
+      <h1 class="hero-name">
+        <span class="hero-name-first">Deepesh</span>
+        <span class="hero-name-rest"> Kumar Pankaj</span>
+      </h1>
+      <p class="hero-role">Web Developer · Builder · Founder</p>
+      <p class="hero-desc">
+        BCA student at LNCT, Bhopal. I ship real products — AI-powered web apps, health tools, and brand sites — and I care as much about how they feel as how they work.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary" id="hero-view-work">View my work</a>
+        <a href="#contact" class="btn-ghost" id="hero-contact">Say hello &#8594;</a>
+      </div>
+      <ul class="hero-tags" aria-label="Core technologies">
+        <li>JavaScript</li>
+        <li>HTML &amp; CSS</li>
+        <li>Node.js</li>
+        <li>Python</li>
+        <li>AI APIs</li>
+        <li>React ↗</li>
+      </ul>
+    </div>
+  </div>
+  <div class="scroll-indicator" aria-hidden="true">
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container">
+    <p class="section-eyebrow reveal">About</p>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <h2 class="about-heading">
+          I build products that solve problems —<br>
+          <em>not just demos that look nice.</em>
+        </h2>
+        <p>
+          I'm a BCA student in my third semester at LNCT University, Bhopal — and I've shipped four live web apps while learning. My work spans AI-assisted clinical tools, conversational companions, health trackers, and brand sites. I write clean HTML/CSS/JS, integrate AI APIs, and keep iterating until things work.
+        </p>
+        <p>
+          Currently expanding into React and the full MERN stack, and building Panchayat — a hyperlocal social platform for rural India — as a long-term personal project.
+        </p>
+      </div>
+      <div class="about-sidebar reveal reveal-right">
+        <div class="info-card">
+          <div class="info-card-label">Education</div>
+          <div class="info-card-title">BCA · LNCT University</div>
+          <div class="info-card-sub">Bhopal · 2025 – 2028 · Semester 3<br>1st Sem CGPA: <strong>8.5 / 10</strong></div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-label">Schooling</div>
+          <div class="info-card-title">DAV Public School, Rihand Nagar</div>
+          <div class="info-card-sub">CBSE — Class X &amp; XII</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-label">Currently building</div>
+          <div class="info-card-chips">
+            <span>React.js</span>
+            <span>MERN Stack</span>
+            <span>Panchayat</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section section-tinted">
+  <div class="container">
+    <p class="section-eyebrow reveal">Work</p>
+    <h2 class="section-title reveal">Four live products.</h2>
+    <p class="section-sub reveal">Each one solves a specific problem, deployed and working.</p>
+
+    <div class="projects-grid">
+
+      <!-- HealthAI -->
+      <article class="project-card project-card--featured reveal" id="proj-healthai">
+        <div class="project-card-inner">
+          <div class="project-header">
+            <div class="project-badges">
+              <span class="badge badge-live">Live</span>
+              <span class="badge badge-neutral">AI · Healthcare</span>
+            </div>
+            <a href="https://co-pilot-nine.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link-arrow" aria-label="Open HealthAI">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <h3 class="project-name">HealthAI</h3>
+          <p class="project-subtitle">AI Clinical Co-Pilot for Doctors</p>
+          <p class="project-desc">
+            Doctors miss things under pressure. HealthAI compares incoming patient data against historical clinical case patterns and surfaces evidence-based treatment options in real time. Built with a dual-portal system — a patient intake form on one side and a structured doctor dashboard on the other — with multi-step analysis and one-click PDF report generation.
+          </p>
+          <div class="project-tech">
+            <span>JavaScript</span><span>HTML/CSS</span><span>AI API</span><span>PDF Export</span><span>Vercel</span>
+          </div>
+          <a href="https://co-pilot-nine.vercel.app" target="_blank" rel="noopener noreferrer" class="project-cta" id="link-healthai">
+            co-pilot-nine.vercel.app &#8594;
+          </a>
+        </div>
+      </article>
+
+      <!-- Sathi -->
+      <article class="project-card reveal" id="proj-sathi">
+        <div class="project-card-inner">
+          <div class="project-header">
+            <div class="project-badges">
+              <span class="badge badge-live">Live</span>
+              <span class="badge badge-neutral">AI · Chat</span>
+            </div>
+            <a href="https://sathi-lake.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link-arrow" aria-label="Open Sathi">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <h3 class="project-name">Sathi</h3>
+          <p class="project-subtitle">AI Companion App</p>
+          <p class="project-desc">
+            A conversational AI companion built on the Claude API with a personality system — switch between modes for general chat, student help, career advice, or business thinking. Each persona shapes how the AI responds, giving users a companion that adapts to what they actually need.
+          </p>
+          <div class="project-tech">
+            <span>JavaScript</span><span>Claude API</span><span>CSS</span><span>Vercel</span>
+          </div>
+          <a href="https://sathi-lake.vercel.app" target="_blank" rel="noopener noreferrer" class="project-cta" id="link-sathi">
+            sathi-lake.vercel.app &#8594;
+          </a>
+        </div>
+      </article>
+
+      <!-- Fiira -->
+      <article class="project-card reveal" id="proj-fiira">
+        <div class="project-card-inner">
+          <div class="project-header">
+            <div class="project-badges">
+              <span class="badge badge-live">Live</span>
+              <span class="badge badge-neutral">Health · Web</span>
+            </div>
+            <a href="https://fiira.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link-arrow" aria-label="Open Fiira">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <h3 class="project-name">Fiira</h3>
+          <p class="project-subtitle">Smart Menstrual Health Tracker</p>
+          <p class="project-desc">
+            Most health apps collect data and do nothing with it. Fiira takes cycle inputs and returns real predictions — next cycle date, symptom-based insights, and personalised diet and hygiene guidance. Everything runs as a form-driven calculation engine with no backend required.
+          </p>
+          <div class="project-tech">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Netlify</span>
+          </div>
+          <a href="https://fiira.netlify.app" target="_blank" rel="noopener noreferrer" class="project-cta" id="link-fiira">
+            fiira.netlify.app &#8594;
+          </a>
+        </div>
+      </article>
+
+      <!-- DP Jewels -->
+      <article class="project-card reveal" id="proj-dpjewels">
+        <div class="project-card-inner">
+          <div class="project-header">
+            <div class="project-badges">
+              <span class="badge badge-live">Live</span>
+              <span class="badge badge-neutral">Brand · Web</span>
+            </div>
+            <a href="https://dpjewels.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link-arrow" aria-label="Open DP Jewels">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <h3 class="project-name">DP Jewels</h3>
+          <p class="project-subtitle">Brand Showcase &amp; E-Commerce Landing</p>
+          <p class="project-desc">
+            A responsive brand site for a jewellery label — showcasing product collections with a clean visual hierarchy, highlighted items section, and appointment-booking flow. Built to feel premium at first glance, matching the aesthetic expectations of the retail brand.
+          </p>
+          <div class="project-tech">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Netlify</span>
+          </div>
+          <a href="https://dpjewels.netlify.app" target="_blank" rel="noopener noreferrer" class="project-cta" id="link-dpjewels">
+            dpjewels.netlify.app &#8594;
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Panchayat — currently building note -->
+    <div class="wip-card reveal" id="proj-panchayat">
+      <div class="wip-dot" aria-hidden="true"></div>
+      <div class="wip-content">
+        <span class="wip-label">Currently building</span>
+        <span class="wip-name">Panchayat</span>
+        <span class="wip-desc">A hyperlocal social platform for rural India, built around LGD village identity. Long-term personal project — still early, actively in progress.</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <div class="container">
+    <p class="section-eyebrow reveal">Skills</p>
+    <h2 class="section-title reveal">Used in real projects.</h2>
+    <p class="section-sub reveal">Not aspirational — things I've actually shipped with.</p>
+    <div class="skills-layout reveal">
+
+      <div class="skill-block">
+        <div class="skill-block-label">Languages</div>
+        <div class="skill-chips">
+          <span>JavaScript</span>
+          <span>Python</span>
+          <span>C</span>
+          <span>SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="skill-block-label">Frontend</div>
+        <div class="skill-chips">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>Responsive Design</span>
+          <span>DOM APIs</span>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="skill-block-label">Backend</div>
+        <div class="skill-chips">
+          <span>Node.js</span>
+          <span>Express.js</span>
+          <span>REST APIs</span>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="skill-block-label">Databases</div>
+        <div class="skill-chips">
+          <span>MySQL</span>
+          <span>MongoDB</span>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="skill-block-label">Tools &amp; Platforms</div>
+        <div class="skill-chips">
+          <span>Git</span>
+          <span>GitHub</span>
+          <span>VS Code</span>
+          <span>Vercel</span>
+          <span>Netlify</span>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="skill-block-label">CS Fundamentals</div>
+        <div class="skill-chips">
+          <span>OOP</span>
+          <span>DBMS</span>
+          <span>DSA</span>
+        </div>
+      </div>
+
+      <div class="skill-block skill-block--learning">
+        <div class="skill-block-label">Learning now</div>
+        <div class="skill-chips">
+          <span class="chip-learning">React.js</span>
+          <span class="chip-learning">MERN Stack</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS + GALLERY -->
+<section id="achievements" class="section section-tinted">
+  <div class="container">
+    <p class="section-eyebrow reveal">Events &amp; Achievements</p>
+    <h2 class="section-title reveal">Rooms I've been in.</h2>
+    <p class="section-sub reveal">Hackathons, bootcamps, conferences — places that sharpened the work.</p>
+
+    <div class="timeline reveal">
+
+      <div class="timeline-item">
+        <div class="timeline-marker" aria-hidden="true"></div>
+        <div class="timeline-year">2026</div>
+        <div class="timeline-body">
+          <div class="timeline-title">India Innovates 2026 — Bharat Mandapam, New Delhi</div>
+          <div class="timeline-detail">Represented at one of India's flagship national innovation events. Participated on 28 March 2026 with certificate issued.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker" aria-hidden="true"></div>
+        <div class="timeline-year">2026</div>
+        <div class="timeline-body">
+          <div class="timeline-title">Research Paper — ICAIEST-2026, LNCT Bhopal</div>
+          <div class="timeline-detail">Presented "HAI: The Trust-Centric Paradigm in Clinical AI" at the International Conference on Advanced Innovation in Engineering, Science and Technology, Feb 27–28 2026.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker" aria-hidden="true"></div>
+        <div class="timeline-year">2026</div>
+        <div class="timeline-body">
+          <div class="timeline-title">IDE Bootcamp — Edition 3, Phase 2 · MITS Gwalior</div>
+          <div class="timeline-detail">Innovation, Design and Entrepreneurship Bootcamp organised by MoE, Wadhwani Foundation and SBI Foundation. April 20–24 2026.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker" aria-hidden="true"></div>
+        <div class="timeline-year">2026</div>
+        <div class="timeline-body">
+          <div class="timeline-title">Tech Bootcamp — Gwalior</div>
+          <div class="timeline-detail">Attended technical training bootcamp focused on applied development skills.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker" aria-hidden="true"></div>
+        <div class="timeline-year">2026</div>
+        <div class="timeline-body">
+          <div class="timeline-title">AI / ML &amp; Data Analytics — Certification</div>
+          <div class="timeline-detail">"Decoding Data: Learn AI, ML, DS and Analytics" — Samatrix Consulting Pvt Ltd. Completed May 14 2026.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Gallery -->
+    <div class="gallery-wrap reveal">
+      <p class="gallery-eyebrow">Moments</p>
+      <div class="gallery-grid" role="list">
+        <figure class="gallery-item" role="listitem">
+          <img
+            src="image/icaiest_ceremony.jpg"
+            alt="Receiving certificate at ICAIEST-2026 research paper presentation, LNCT Bhopal"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>ICAIEST-2026 · LNCT Bhopal</figcaption>
+        </figure>
+        <figure class="gallery-item" role="listitem">
+          <img
+            src="image/IMG_20260424_115135655.jpg"
+            alt="IDE Bootcamp Edition 3 Phase 2 at MITS Gwalior — Ministry of Education and Wadhwani Foundation"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>IDE Bootcamp · MITS Gwalior</figcaption>
+        </figure>
+        <figure class="gallery-item" role="listitem">
+          <img
+            src="image/india_innovates.jpg"
+            alt="India Innovates 2026 — Bharat Mandapam, New Delhi"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>India Innovates 2026 · New Delhi</figcaption>
+        </figure>
+        <figure class="gallery-item" role="listitem">
+          <img
+            src="image/icaiest-cert-award.jpg"
+            alt="Certificate award at ICAIEST-2026 conference"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>Certificate · ICAIEST-2026</figcaption>
+        </figure>
+        <figure class="gallery-item" role="listitem">
+          <img
+            src="image/hackathon-parakram.jpg"
+            alt="Hackathon or event participation — Deepesh Kumar Pankaj"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>Innovation Event · 2026</figcaption>
+        </figure>
+        <figure class="gallery-item" role="listitem">
+          <img
+            src="image/ide-bootcamp-solo.jpg"
+            alt="IDE Bootcamp solo session — entrepreneurship and design thinking"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>IDE Bootcamp · Session</figcaption>
+        </figure>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="container">
+    <p class="section-eyebrow reveal">Contact</p>
+    <h2 class="section-title reveal">Let's build something.</h2>
+    <p class="section-sub reveal">Open to collaborations, hackathon teams, freelance projects, and interesting ideas.</p>
+
+    <div class="contact-layout reveal">
+      <div class="contact-links-col">
+        <a href="https://github.com/deepeshpankaj01" target="_blank" rel="noopener noreferrer" class="contact-link-card" id="link-github">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </div>
+          <div class="contact-link-text">
+            <span class="contact-link-platform">GitHub</span>
+            <span class="contact-link-value">deepeshpankaj01</span>
+          </div>
+          <svg class="contact-link-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/deepesh-pankaj-3ba960225" target="_blank" rel="noopener noreferrer" class="contact-link-card" id="link-linkedin">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </div>
+          <div class="contact-link-text">
+            <span class="contact-link-platform">LinkedIn</span>
+            <span class="contact-link-value">deepesh-pankaj-3ba960225</span>
+          </div>
+          <svg class="contact-link-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="https://www.instagram.com/deepeshpankaj01" target="_blank" rel="noopener noreferrer" class="contact-link-card" id="link-instagram">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </div>
+          <div class="contact-link-text">
+            <span class="contact-link-platform">Instagram</span>
+            <span class="contact-link-value">@deepeshpankaj01</span>
+          </div>
+          <svg class="contact-link-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="mailto:deepeshkumar79239@gmail.com" class="contact-link-card" id="link-email">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-link-text">
+            <span class="contact-link-platform">Email</span>
+            <span class="contact-link-value">deepeshkumar79239@gmail.com</span>
+          </div>
+        </a>
+      </div>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">Name</label>
+            <input type="text" id="fname" name="name" placeholder="Your name" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="femail">Email</label>
+            <input type="email" id="femail" name="email" placeholder="you@example.com" required autocomplete="email" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fsubject">Subject</label>
+          <input type="text" id="fsubject" name="subject" placeholder="What's this about?" />
+        </div>
+        <div class="form-group">
+          <label for="fmsg">Message</label>
+          <textarea id="fmsg" name="message" rows="5" placeholder="Tell me what you're thinking..." required></textarea>
+        </div>
+        <div class="form-footer">
+          <button type="submit" id="contactSubmit">Send message</button>
+          <p class="form-note">Opens your email client — no data is stored.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <span class="footer-name">Deepesh Kumar Pankaj</span>
+      <span class="footer-location">Bhopal, India</span>
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="#top">Top</a>
+      <a href="#projects">Work</a>
+      <a href="https://github.com/deepeshpankaj01" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/deepesh-pankaj-3ba960225" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+    <p class="footer-copy">© 2026</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
