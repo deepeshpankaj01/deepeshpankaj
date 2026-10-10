@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --canvas-bg: #FBFBF9;
+    --canvas-subtle: #F4F4F0;
+    --canvas-elevated: #ECECE7;
+    --ink-main: #0B0D12;
+    --ink-secondary: #363B47;
+    --ink-muted: #687082;
+    --cobalt: #2563EB;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--canvas-bg);
+    color: var(--ink-main);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: #2563EB;
+    color: #FFFFFF;
+  }
+
+  /* Accessible focus indicators */
+  :focus-visible {
+    outline: 2px solid #2563EB;
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  /* Subtle glass & blur */
+  .glass-ivory {
+    background: rgba(251, 251, 249, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .glass-obsidian {
+    background: rgba(10, 12, 16, 0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* Fine hairpins and borders */
+  .border-hairline {
+    border-color: rgba(0, 0, 0, 0.08);
+  }
+
+  .border-hairline-dark {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Editorial typography */
+  .editorial-title {
+    font-family: 'Syne', sans-serif;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+  }
+
+  .editorial-serif-accent {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .font-mono-tag {
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

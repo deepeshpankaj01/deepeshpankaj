@@ -1,503 +1,507 @@
 /* ==========================================================
-   Deepesh Kumar Pankaj — Portfolio · script.js
-   Premium interactions: cursor, counters, stagger, lightbox,
-   magnetic buttons, smooth reveals, and form handling.
+   Deepesh Kumar Pankaj — Portfolio Experience Engine
+   Interactions: Fluid Cursor, Counter Easing, Spotlight Tracking,
+   Accessible Lightbox, Magnetic Pull & Form Handling
    ========================================================== */
 
 'use strict';
 
-/* ── Nav: scroll-aware + active highlight ─────────────────── */
-(function initNav() {
+/* ── 1. Scroll-Aware Navigation & Active Section Tracking ── */
+(function initNavigation() {
   const nav = document.getElementById('nav');
   if (!nav) return;
 
-  // Scroll shadow
-  const tick = () => nav.classList.toggle('scrolled', window.scrollY > 32);
-  window.addEventListener('scroll', tick, { passive: true });
-  tick();
+  // Header elevation on scroll
+  const handleScroll = () => {
+    nav.classList.toggle('scrolled', window.scrollY > 30);
+  };
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
 
-  // Active nav link based on scroll position
-  const links    = document.querySelectorAll('.nav-links a');
-  const sections = document.querySelectorAll('section[id]');
-  if (!links.length || !sections.length) return;
+  // Active navigation link tracking
+  const navLinks = document.querySelectorAll('.nav-links a, .nav-drawer a');
+  const trackedSections = document.querySelectorAll('header[id], section[id]');
 
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      const id = e.target.id;
-      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${id}`));
+  if (!navLinks.length || !trackedSections.length) return;
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const currentId = entry.target.id;
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        link.classList.toggle('active', href === `#${currentId}`);
+      });
     });
-  }, { rootMargin: '-30% 0px -65% 0px' });
+  }, { rootMargin: '-25% 0px -60% 0px' });
 
-  sections.forEach(s => obs.observe(s));
+  trackedSections.forEach(sec => sectionObserver.observe(sec));
 })();
 
-/* ── Mobile burger menu ──────────────────────────────────── */
-(function initBurger() {
+/* ── 2. Mobile Drawer Navigation ─────────────────────────── */
+(function initMobileDrawer() {
   const burger = document.getElementById('navBurger');
   const drawer = document.getElementById('navDrawer');
   if (!burger || !drawer) return;
 
-  let open = false;
+  let isOpen = false;
 
-  function setMenu(state) {
-    open = state;
-    drawer.classList.toggle('open', open);
-    burger.setAttribute('aria-expanded', String(open));
-    drawer.setAttribute('aria-hidden', String(!open));
+  function toggleMenu(state) {
+    isOpen = state;
+    drawer.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', String(isOpen));
+    drawer.setAttribute('aria-hidden', String(!isOpen));
+
     const spans = burger.querySelectorAll('span');
-    if (open) {
+    if (isOpen) {
       spans[0].style.transform = 'translateY(6.5px) rotate(45deg)';
-      spans[1].style.opacity   = '0';
+      spans[1].style.opacity = '0';
       spans[2].style.transform = 'translateY(-6.5px) rotate(-45deg)';
+      document.body.style.overflow = 'hidden';
     } else {
-      spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+      spans.forEach(span => {
+        span.style.transform = '';
+        span.style.opacity = '';
+      });
+      document.body.style.overflow = '';
     }
   }
 
-  burger.addEventListener('click', () => setMenu(!open));
-  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
-  document.addEventListener('click', e => {
-    if (open && !burger.contains(e.target) && !drawer.contains(e.target)) setMenu(false);
+  burger.addEventListener('click', () => toggleMenu(!isOpen));
+
+  drawer.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => toggleMenu(false));
   });
-  document.addEventListener('keydown', e => {
-    if (open && e.key === 'Escape') setMenu(false);
+
+  document.addEventListener('click', (e) => {
+    if (isOpen && !burger.contains(e.target) && !drawer.contains(e.target)) {
+      toggleMenu(false);
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (isOpen && e.key === 'Escape') toggleMenu(false);
   });
 })();
 
-/* ── Scroll Reveal ───────────────────────────────────────── */
-(function initReveal() {
-  const revealEls  = document.querySelectorAll('.reveal');
-  const staggerEls = document.querySelectorAll('.stagger-children');
+/* ── 3. Smooth Intersection Observer Scroll Reveal ───────── */
+(function initScrollReveals() {
+  const reveals = document.querySelectorAll('.reveal');
+  const staggered = document.querySelectorAll('.stagger-children');
 
-  if (!revealEls.length && !staggerEls.length) return;
-
-  // Fallback: no IntersectionObserver
   if (!('IntersectionObserver' in window)) {
-    revealEls.forEach(el => el.classList.add('is-visible'));
-    staggerEls.forEach(el => el.classList.add('is-visible'));
+    reveals.forEach(el => el.classList.add('is-visible'));
+    staggered.forEach(el => el.classList.add('is-visible'));
     return;
   }
 
-  // Reveal observer
-  const revealObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      e.target.classList.add('is-visible');
-      revealObs.unobserve(e.target);
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -56px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-  revealEls.forEach(el => revealObs.observe(el));
-
-  // Stagger observer
-  const staggerObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      e.target.classList.add('is-visible');
-      staggerObs.unobserve(e.target);
-    });
-  }, { threshold: 0.06, rootMargin: '0px 0px -32px 0px' });
-
-  staggerEls.forEach(el => staggerObs.observe(el));
+  reveals.forEach(el => revealObserver.observe(el));
+  staggered.forEach(el => revealObserver.observe(el));
 })();
 
-/* ── Animated Number Counters ────────────────────────────── */
-(function initCounters() {
-  const nums = document.querySelectorAll('[data-count]');
-  if (!nums.length) return;
+/* ── 4. Eased Metric Numerical Counters ──────────────────── */
+(function initMetricCounters() {
+  const counterElements = document.querySelectorAll('[data-count]');
+  if (!counterElements.length) return;
 
-  const easeOut = t => 1 - Math.pow(1 - t, 3);
+  const easeOutQuad = t => t * (2 - t);
 
-  function animateCounter(el, target, duration = 1200) {
-    const start = performance.now();
-    const update = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
-      el.textContent = Math.round(easeOut(progress) * target);
-      if (progress < 1) requestAnimationFrame(update);
-      else el.textContent = target;
-    };
-    requestAnimationFrame(update);
+  function runCounter(el, targetNumber, duration = 1300) {
+    const startTime = performance.now();
+    function step(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const currentVal = Math.round(easeOutQuad(progress) * targetNumber);
+      el.textContent = currentVal;
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = targetNumber;
+      }
+    }
+    requestAnimationFrame(step);
   }
 
   if (!('IntersectionObserver' in window)) {
-    nums.forEach(el => {
-      const target = parseInt(el.dataset.count, 10);
-      if (!isNaN(target)) el.textContent = target;
+    counterElements.forEach(el => {
+      el.textContent = el.dataset.count;
     });
     return;
   }
 
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      const target = parseInt(e.target.dataset.count, 10);
-      if (!isNaN(target)) animateCounter(e.target, target);
-      obs.unobserve(e.target);
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const target = parseInt(entry.target.dataset.count, 10);
+      if (!isNaN(target)) runCounter(entry.target, target);
+      counterObserver.unobserve(entry.target);
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.6 });
 
-  nums.forEach(el => obs.observe(el));
+  counterElements.forEach(el => counterObserver.observe(el));
 })();
 
-/* ── Cursor Dot + Ring ───────────────────────────────────── */
-(function initCursor() {
-  // Only on pointer devices, not touch
-  if (window.matchMedia('(hover: none)').matches) return;
+/* ── 5. Atmospheric Cursor Follower (Pointer Devices Only) ── */
+(function initCustomCursor() {
+  if (window.matchMedia('(hover: none) or (pointer: coarse)').matches) return;
 
-  const dot  = document.getElementById('cursor-dot');
+  const dot = document.getElementById('cursor-dot');
   const ring = document.getElementById('cursor-ring');
   if (!dot || !ring) return;
 
-  let mouseX = 0, mouseY = 0;
-  let ringX = 0, ringY = 0;
-  let rafId;
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let ringX = mouseX;
+  let ringY = mouseY;
+  let isMoving = false;
 
-  document.addEventListener('mousemove', e => {
+  document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
     dot.style.left = mouseX + 'px';
-    dot.style.top  = mouseY + 'px';
+    dot.style.top = mouseY + 'px';
+    if (!isMoving) {
+      isMoving = true;
+      dot.style.opacity = '1';
+      ring.style.opacity = '1';
+    }
   }, { passive: true });
 
-  function animateRing() {
-    // Ring follows with slight lag for smoothness
-    ringX += (mouseX - ringX) * 0.12;
-    ringY += (mouseY - ringY) * 0.12;
+  function followLoop() {
+    ringX += (mouseX - ringX) * 0.14;
+    ringY += (mouseY - ringY) * 0.14;
     ring.style.left = ringX + 'px';
-    ring.style.top  = ringY + 'px';
-    rafId = requestAnimationFrame(animateRing);
+    ring.style.top = ringY + 'px';
+    requestAnimationFrame(followLoop);
   }
-  animateRing();
+  followLoop();
 
-  // Scale ring on interactive elements
-  const interactiveSelectors = 'a, button, [tabindex], .project-card, .gallery-item, .contact-link-card, .info-card, .skill-block';
+  const interactiveElements = 'a, button, .moment-card, .project-card, .flagship-card, .lab-card, .pillar-card, .fact-card, .skill-domain-card';
 
-  document.addEventListener('mouseover', e => {
-    if (e.target.closest(interactiveSelectors)) {
-      ring.style.width  = '48px';
+  document.addEventListener('mouseover', (e) => {
+    if (e.target.closest(interactiveElements)) {
+      ring.style.width = '48px';
       ring.style.height = '48px';
-      ring.style.borderColor = 'rgba(59,130,246,0.8)';
-      dot.style.width  = '4px';
-      dot.style.height = '4px';
+      ring.style.borderColor = 'rgba(96, 165, 250, 0.85)';
+      ring.style.backgroundColor = 'rgba(59, 130, 246, 0.05)';
+      dot.style.transform = 'translate(-50%, -50%) scale(1.5)';
     }
   });
 
-  document.addEventListener('mouseout', e => {
-    if (e.target.closest(interactiveSelectors)) {
-      ring.style.width  = '32px';
-      ring.style.height = '32px';
-      ring.style.borderColor = 'rgba(59,130,246,0.5)';
-      dot.style.width  = '6px';
-      dot.style.height = '6px';
+  document.addEventListener('mouseout', (e) => {
+    if (e.target.closest(interactiveElements)) {
+      ring.style.width = '34px';
+      ring.style.height = '34px';
+      ring.style.borderColor = 'rgba(96, 165, 250, 0.45)';
+      ring.style.backgroundColor = 'transparent';
+      dot.style.transform = 'translate(-50%, -50%) scale(1)';
     }
   });
 
-  // Hide when leaving window
   document.addEventListener('mouseleave', () => {
-    dot.style.opacity  = '0';
+    dot.style.opacity = '0';
     ring.style.opacity = '0';
-  });
-  document.addEventListener('mouseenter', () => {
-    dot.style.opacity  = '1';
-    ring.style.opacity = '1';
+    isMoving = false;
   });
 })();
 
-/* ── Magnetic Button Effect ──────────────────────────────── */
-(function initMagnetic() {
-  const btns = document.querySelectorAll('.btn-primary, .btn-ghost');
-  if (!btns.length || window.matchMedia('(hover: none)').matches) return;
+/* ── 6. Card Spotlight Cursor Tracking ────────────────────── */
+(function initCardSpotlights() {
+  if (window.matchMedia('(hover: none)').matches) return;
 
-  btns.forEach(btn => {
-    btn.addEventListener('mousemove', e => {
-      const rect = btn.getBoundingClientRect();
-      const cx = rect.left + rect.width  / 2;
-      const cy = rect.top  + rect.height / 2;
-      const dx = (e.clientX - cx) * 0.25;
-      const dy = (e.clientY - cy) * 0.25;
-      btn.style.transform = `translate(${dx}px, ${dy}px)`;
-    });
-
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transform = '';
-      btn.style.transition = 'transform 0.4s cubic-bezier(0.22,1,0.36,1)';
-      setTimeout(() => { btn.style.transition = ''; }, 400);
-    });
-  });
-})();
-
-/* ── Gallery Lightbox ────────────────────────────────────── */
-(function initLightbox() {
-  const figures = document.querySelectorAll('.gallery-item');
-  if (!figures.length) return;
-
-  // Build overlay
-  const overlay = document.createElement('div');
-  overlay.setAttribute('role', 'dialog');
-  overlay.setAttribute('aria-modal', 'true');
-  overlay.setAttribute('aria-label', 'Photo lightbox');
-  overlay.id = 'lightbox-overlay';
-  Object.assign(overlay.style, {
-    display:              'none',
-    position:             'fixed',
-    inset:                '0',
-    zIndex:               '600',
-    background:           'rgba(0,0,0,0.92)',
-    backdropFilter:       'blur(20px)',
-    WebkitBackdropFilter: 'blur(20px)',
-    alignItems:           'center',
-    justifyContent:       'center',
-    padding:              '24px',
-    cursor:               'zoom-out',
-  });
-
-  const img = document.createElement('img');
-  img.alt = '';
-  Object.assign(img.style, {
-    maxWidth:     'min(900px, 92vw)',
-    maxHeight:    '86svh',
-    objectFit:    'contain',
-    borderRadius: '14px',
-    boxShadow:    '0 32px 100px rgba(0,0,0,0.7)',
-    transition:   'opacity 0.25s, transform 0.25s',
-    opacity:      '0',
-    transform:    'scale(0.96)',
-  });
-
-  const cap = document.createElement('figcaption');
-  Object.assign(cap.style, {
-    position:       'absolute',
-    bottom:         '28px',
-    left:           '50%',
-    transform:      'translateX(-50%)',
-    color:          'rgba(255,255,255,0.55)',
-    fontSize:       '0.78rem',
-    fontFamily:     'Inter, sans-serif',
-    fontWeight:     '500',
-    letterSpacing:  '0.04em',
-    whiteSpace:     'nowrap',
-    pointerEvents:  'none',
-  });
-
-  const closeBtn = document.createElement('button');
-  closeBtn.setAttribute('aria-label', 'Close lightbox');
-  closeBtn.innerHTML = '&#215;';
-  Object.assign(closeBtn.style, {
-    position:       'absolute',
-    top:            '20px',
-    right:          '24px',
-    width:          '40px',
-    height:         '40px',
-    borderRadius:   '50%',
-    border:         '1px solid rgba(255,255,255,0.12)',
-    background:     'rgba(255,255,255,0.06)',
-    color:          'rgba(255,255,255,0.7)',
-    fontSize:       '1.3rem',
-    display:        'flex',
-    alignItems:     'center',
-    justifyContent: 'center',
-    cursor:         'pointer',
-    transition:     'background 0.2s, color 0.2s',
-    fontFamily:     'inherit',
-  });
-  closeBtn.addEventListener('mouseenter', () => {
-    closeBtn.style.background = 'rgba(255,255,255,0.14)';
-    closeBtn.style.color = '#fff';
-  });
-  closeBtn.addEventListener('mouseleave', () => {
-    closeBtn.style.background = 'rgba(255,255,255,0.06)';
-    closeBtn.style.color = 'rgba(255,255,255,0.7)';
-  });
-
-  overlay.append(img, cap, closeBtn);
-  document.body.append(overlay);
-
-  let figList = [...figures];
-  let currentIdx = 0;
-
-  // Prev/next buttons
-  ['prev', 'next'].forEach(dir => {
-    const btn = document.createElement('button');
-    btn.setAttribute('aria-label', dir === 'prev' ? 'Previous photo' : 'Next photo');
-    btn.innerHTML = dir === 'prev' ? '&#8592;' : '&#8594;';
-    Object.assign(btn.style, {
-      position:       'absolute',
-      top:            '50%',
-      transform:      'translateY(-50%)',
-      [dir === 'prev' ? 'left' : 'right']: '20px',
-      width:          '44px',
-      height:         '44px',
-      borderRadius:   '50%',
-      border:         '1px solid rgba(255,255,255,0.12)',
-      background:     'rgba(255,255,255,0.06)',
-      color:          'rgba(255,255,255,0.7)',
-      fontSize:       '1.2rem',
-      display:        'flex',
-      alignItems:     'center',
-      justifyContent: 'center',
-      cursor:         'pointer',
-      transition:     'background 0.2s, color 0.2s',
-      fontFamily:     'inherit',
-    });
-    btn.addEventListener('click', e => {
-      e.stopPropagation();
-      if (dir === 'prev') navigate(-1);
-      else navigate(1);
-    });
-    btn.addEventListener('mouseenter', () => {
-      btn.style.background = 'rgba(255,255,255,0.14)';
-      btn.style.color = '#fff';
-    });
-    btn.addEventListener('mouseleave', () => {
-      btn.style.background = 'rgba(255,255,255,0.06)';
-      btn.style.color = 'rgba(255,255,255,0.7)';
-    });
-    overlay.append(btn);
-  });
-
-  function showImage(i, animate = false) {
-    const fig  = figList[i];
-    const imgEl = fig.querySelector('img');
-    const capEl = fig.querySelector('figcaption');
-    if (!imgEl) return;
-
-    if (animate) {
-      img.style.opacity   = '0';
-      img.style.transform = 'scale(0.96)';
-    }
-    img.src = imgEl.src;
-    img.alt = imgEl.alt || '';
-    cap.textContent = capEl ? capEl.textContent : '';
-
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        img.style.opacity   = '1';
-        img.style.transform = 'scale(1)';
-      });
-    });
-  }
-
-  function navigate(dir) {
-    currentIdx = (currentIdx + dir + figList.length) % figList.length;
-    showImage(currentIdx, true);
-  }
-
-  function openLightbox(idx) {
-    currentIdx = idx;
-    img.style.opacity   = '0';
-    img.style.transform = 'scale(0.96)';
-    overlay.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-    showImage(currentIdx);
-  }
-
-  function closeLightbox() {
-    img.style.opacity   = '0';
-    img.style.transform = 'scale(0.96)';
-    setTimeout(() => {
-      overlay.style.display = 'none';
-      document.body.style.overflow = '';
-      img.src = '';
-    }, 200);
-  }
-
-  figures.forEach((fig, idx) => {
-    const i = fig.querySelector('img');
-    if (!i) return;
-    fig.setAttribute('tabindex', '0');
-    const open = () => openLightbox(idx);
-    fig.addEventListener('click', open);
-    fig.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
-    });
-  });
-
-  overlay.addEventListener('click', e => { if (e.target === overlay) closeLightbox(); });
-  closeBtn.addEventListener('click', closeLightbox);
-  document.addEventListener('keydown', e => {
-    if (overlay.style.display !== 'flex') return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft')  navigate(-1);
-    if (e.key === 'ArrowRight') navigate(1);
-  });
-})();
-
-/* ── Contact Form → Mailto ───────────────────────────────── */
-(function initContactForm() {
-  const form = document.getElementById('contactForm');
-  const btn  = document.getElementById('contactSubmit');
-  if (!form || !btn) return;
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-
-    const name    = (form.elements['name']?.value    || '').trim();
-    const email   = (form.elements['email']?.value   || '').trim();
-    const subject = (form.elements['subject']?.value || '').trim();
-    const message = (form.elements['message']?.value || '').trim();
-
-    let valid = true;
-    ['name', 'email', 'message'].forEach(field => {
-      const el = form.elements[field];
-      if (!el || el.value.trim()) return;
-      valid = false;
-      el.style.borderColor = '#f87171';
-      el.style.boxShadow   = '0 0 0 3px rgba(248,113,113,0.12)';
-      el.addEventListener('input', function fix() {
-        el.style.borderColor = '';
-        el.style.boxShadow   = '';
-        el.removeEventListener('input', fix);
-      }, { once: true });
-    });
-    if (!valid) return;
-
-    const sub  = subject || 'Portfolio contact — ' + name;
-    const body = `Hi Deepesh,\n\n${message}\n\n—\n${name}\n${email}`;
-    window.location.href =
-      `mailto:deepeshkumar79239@gmail.com` +
-      `?subject=${encodeURIComponent(sub)}` +
-      `&body=${encodeURIComponent(body)}`;
-
-    const orig = btn.textContent;
-    btn.disabled = true;
-    btn.textContent = 'Opening email…';
-    setTimeout(() => { btn.disabled = false; btn.textContent = orig; }, 2800);
-  });
-})();
-
-/* ── Smooth project card hover glow ─────────────────────── */
-(function initCardGlow() {
-  const cards = document.querySelectorAll('.project-card');
-  if (!cards.length || window.matchMedia('(hover: none)').matches) return;
+  const cards = document.querySelectorAll('.flagship-card, .project-card, .lab-card, .research-feature-card');
+  if (!cards.length) return;
 
   cards.forEach(card => {
-    card.addEventListener('mousemove', e => {
+    card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 100;
       const y = ((e.clientY - rect.top) / rect.height) * 100;
-      card.style.background =
-        `radial-gradient(circle at ${x}% ${y}%, rgba(59,130,246,0.04) 0%, transparent 60%), var(--canvas-card)`;
+      card.style.background = `radial-gradient(circle 380px at ${x}% ${y}%, rgba(59, 130, 246, 0.06), transparent 70%), var(--canvas-card)`;
     });
+
     card.addEventListener('mouseleave', () => {
       card.style.background = '';
     });
   });
 })();
 
-/* ── Page Load Orchestration ─────────────────────────────── */
-(function initPageLoad() {
-  document.documentElement.style.opacity = '0';
-  document.documentElement.style.transition = 'opacity 0.4s ease';
+/* ── 7. Magnetic Button Pull ─────────────────────────────── */
+(function initMagneticButtons() {
+  if (window.matchMedia('(hover: none)').matches) return;
 
-  window.addEventListener('load', () => {
+  const magneticTargets = document.querySelectorAll('.btn-primary, .btn-ghost, .nav-cta');
+  if (!magneticTargets.length) return;
+
+  magneticTargets.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const deltaX = (e.clientX - centerX) * 0.22;
+      const deltaY = (e.clientY - centerY) * 0.22;
+      btn.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+      btn.style.transition = 'transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)';
+      setTimeout(() => { btn.style.transition = ''; }, 400);
+    });
+  });
+})();
+
+/* ── 8. High-Performance Accessible Photo Lightbox ────────── */
+(function initPhotoLightbox() {
+  const figures = document.querySelectorAll('.moment-card');
+  if (!figures.length) return;
+
+  const overlay = document.createElement('div');
+  overlay.id = 'lightbox-modal';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.setAttribute('aria-label', 'High-resolution photo viewer');
+  Object.assign(overlay.style, {
+    display:              'none',
+    position:             'fixed',
+    inset:                '0',
+    zIndex:               '1000',
+    background:           'rgba(5, 6, 8, 0.94)',
+    backdropFilter:       'blur(24px)',
+    WebkitBackdropFilter: 'blur(24px)',
+    alignItems:           'center',
+    justifyContent:       'center',
+    padding:              '30px',
+    cursor:               'zoom-out',
+    transition:           'opacity 0.25s ease',
+    opacity:              '0',
+  });
+
+  const modalImg = document.createElement('img');
+  modalImg.alt = '';
+  Object.assign(modalImg.style, {
+    maxWidth:     'min(980px, 92vw)',
+    maxHeight:    '85vh',
+    objectFit:    'contain',
+    borderRadius: '16px',
+    boxShadow:    '0 32px 100px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.1)',
+    transition:   'opacity 0.25s var(--ease-out), transform 0.25s var(--ease-out)',
+    opacity:      '0',
+    transform:    'scale(0.95)',
+  });
+
+  const modalCaption = document.createElement('div');
+  Object.assign(modalCaption.style, {
+    position:      'absolute',
+    bottom:        '28px',
+    left:          '50%',
+    transform:     'translateX(-50%)',
+    color:         'rgba(255, 255, 255, 0.75)',
+    fontSize:      '0.84rem',
+    fontFamily:    'Inter, sans-serif',
+    fontWeight:    '500',
+    letterSpacing: '0.02em',
+    whiteSpace:    'nowrap',
+    pointerEvents: 'none',
+  });
+
+  const closeButton = document.createElement('button');
+  closeButton.setAttribute('aria-label', 'Close photo viewer');
+  closeButton.innerHTML = '&times;';
+  Object.assign(closeButton.style, {
+    position:       'absolute',
+    top:            '24px',
+    right:          '28px',
+    width:          '44px',
+    height:         '44px',
+    borderRadius:   '50%',
+    border:         '1px solid rgba(255, 255, 255, 0.15)',
+    background:     'rgba(255, 255, 255, 0.08)',
+    color:          '#FFFFFF',
+    fontSize:       '1.5rem',
+    display:        'flex',
+    alignItems:     'center',
+    justifyContent: 'center',
+    cursor:         'pointer',
+    transition:     'background 0.2s, transform 0.2s',
+  });
+  closeButton.addEventListener('mouseenter', () => {
+    closeButton.style.background = 'rgba(255, 255, 255, 0.2)';
+    closeButton.style.transform = 'scale(1.08)';
+  });
+  closeButton.addEventListener('mouseleave', () => {
+    closeButton.style.background = 'rgba(255, 255, 255, 0.08)';
+    closeButton.style.transform = 'scale(1)';
+  });
+
+  overlay.append(modalImg, modalCaption, closeButton);
+  document.body.append(overlay);
+
+  const figureList = Array.from(figures);
+  let activeIndex = 0;
+
+  // Arrow controls
+  ['prev', 'next'].forEach(dir => {
+    const arrow = document.createElement('button');
+    arrow.setAttribute('aria-label', dir === 'prev' ? 'Previous image' : 'Next image');
+    arrow.innerHTML = dir === 'prev' ? '&#8592;' : '&#8594;';
+    Object.assign(arrow.style, {
+      position:       'absolute',
+      top:            '50%',
+      transform:      'translateY(-50%)',
+      [dir === 'prev' ? 'left' : 'right']: '24px',
+      width:          '48px',
+      height:         '48px',
+      borderRadius:   '50%',
+      border:         '1px solid rgba(255, 255, 255, 0.15)',
+      background:     'rgba(255, 255, 255, 0.08)',
+      color:          '#FFFFFF',
+      fontSize:       '1.3rem',
+      display:        'flex',
+      alignItems:     'center',
+      justifyContent: 'center',
+      cursor:         'pointer',
+      transition:     'background 0.2s, transform 0.2s',
+    });
+    arrow.addEventListener('click', (e) => {
+      e.stopPropagation();
+      stepImage(dir === 'prev' ? -1 : 1);
+    });
+    arrow.addEventListener('mouseenter', () => {
+      arrow.style.background = 'rgba(255, 255, 255, 0.2)';
+      arrow.style.transform = 'translateY(-50%) scale(1.08)';
+    });
+    arrow.addEventListener('mouseleave', () => {
+      arrow.style.background = 'rgba(255, 255, 255, 0.08)';
+      arrow.style.transform = 'translateY(-50%) scale(1)';
+    });
+    overlay.append(arrow);
+  });
+
+  function displayImage(idx, animate = false) {
+    const fig = figureList[idx];
+    const imgElement = fig.querySelector('img');
+    const capElement = fig.querySelector('figcaption');
+    if (!imgElement) return;
+
+    if (animate) {
+      modalImg.style.opacity = '0';
+      modalImg.style.transform = 'scale(0.96)';
+    }
+
+    modalImg.src = imgElement.src;
+    modalImg.alt = imgElement.alt || '';
+    modalCaption.textContent = capElement ? capElement.textContent : '';
+
     requestAnimationFrame(() => {
-      document.documentElement.style.opacity = '1';
+      requestAnimationFrame(() => {
+        modalImg.style.opacity = '1';
+        modalImg.style.transform = 'scale(1)';
+      });
+    });
+  }
+
+  function stepImage(offset) {
+    activeIndex = (activeIndex + offset + figureList.length) % figureList.length;
+    displayImage(activeIndex, true);
+  }
+
+  function openLightbox(idx) {
+    activeIndex = idx;
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(() => {
+      overlay.style.opacity = '1';
+      displayImage(activeIndex, false);
+    });
+  }
+
+  function closeLightbox() {
+    overlay.style.opacity = '0';
+    modalImg.style.opacity = '0';
+    modalImg.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      overlay.style.display = 'none';
+      document.body.style.overflow = '';
+      modalImg.src = '';
+    }, 220);
+  }
+
+  figureList.forEach((fig, index) => {
+    fig.setAttribute('tabindex', '0');
+    const trigger = () => openLightbox(index);
+    fig.addEventListener('click', trigger);
+    fig.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        trigger();
+      }
     });
   });
 
-  // Fallback if load fires early
-  if (document.readyState === 'complete') {
-    document.documentElement.style.opacity = '1';
-  }
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeLightbox();
+  });
+  closeButton.addEventListener('click', closeLightbox);
+
+  document.addEventListener('keydown', (e) => {
+    if (overlay.style.display !== 'flex') return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') stepImage(-1);
+    if (e.key === 'ArrowRight') stepImage(1);
+  });
+})();
+
+/* ── 9. Direct Email Mailto Form Verification ────────────── */
+(function initContactForm() {
+  const form = document.getElementById('contactForm');
+  const submitButton = document.getElementById('contactSubmit');
+  if (!form || !submitButton) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = (form.elements['name']?.value || '').trim();
+    const email = (form.elements['email']?.value || '').trim();
+    const subject = (form.elements['subject']?.value || '').trim();
+    const message = (form.elements['message']?.value || '').trim();
+
+    let hasError = false;
+
+    ['name', 'email', 'message'].forEach(fieldKey => {
+      const field = form.elements[fieldKey];
+      if (!field || field.value.trim()) return;
+      hasError = true;
+      field.style.borderColor = '#EF4444';
+      field.style.boxShadow = '0 0 0 3px rgba(239, 68, 68, 0.2)';
+      field.addEventListener('input', function removeError() {
+        field.style.borderColor = '';
+        field.style.boxShadow = '';
+        field.removeEventListener('input', removeError);
+      }, { once: true });
+    });
+
+    if (hasError) return;
+
+    const emailSubject = subject || `Portfolio Inquiry from ${name}`;
+    const emailBody = `Hi Deepesh,\n\n${message}\n\n—\nSender: ${name}\nEmail: ${email}`;
+
+    window.location.href = `mailto:deepeshkumar79239@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
+    const originalText = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = 'Opening Email Client…';
+    setTimeout(() => {
+      submitButton.disabled = false;
+      submitButton.textContent = originalText;
+    }, 2800);
+  });
 })();
