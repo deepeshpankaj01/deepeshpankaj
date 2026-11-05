@@ -5,470 +5,345 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Primary SEO -->
-  <title>Projects — Deepesh Pankaj</title>
-  <meta name="title" content="Projects — Deepesh Pankaj" />
+  <title>Projects &amp; Systems — Deepesh Kumar Pankaj</title>
+  <meta name="title" content="Projects &amp; Systems — Deepesh Kumar Pankaj" />
   <meta name="description" content="Categorized directory of software engineering systems: Computer Vision, Real-Time AI, Full-Stack Platforms, and 3D WebGL applications." />
-  <meta name="author" content="Deepesh Pankaj" />
+  <meta name="author" content="Deepesh Kumar Pankaj" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://dpportfolioo.netlify.app/projects.html" />
-  <meta property="og:title" content="Projects — Deepesh Pankaj" />
+  <meta property="og:title" content="Projects &amp; Systems — Deepesh Kumar Pankaj" />
   <meta property="og:description" content="Categorized directory of software engineering systems: Computer Vision, AI, Full-Stack Platforms, and 3D WebGL." />
-  <meta property="og:image" content="image/profile.jpg" />
+  <meta property="og:image" content="image/deepesh_portrait_2026.webp" />
 
-  <link rel="icon" href="image/profile.jpg" type="image/jpeg" />
+  <link rel="icon" href="image/deepesh_portrait_2026.webp" type="image/webp" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Top Sticky Navigation Bar -->
+  <!-- Spatial Particle Canvas & Dynamic Cursor Spotlight -->
+  <canvas id="spatial-canvas"></canvas>
+  <div class="cursor-spotlight"></div>
+
+  <!-- Floating Pill HUD Navbar -->
   <header class="site-header">
-    <div class="container">
-      <div class="nav-inner">
-        <a href="index.html" class="brand-link" aria-label="Deepesh Pankaj Home">
-          <span class="status-dot-wrapper" title="Available for engineering roles">
-            <span class="status-ping"></span>
-            <span class="status-dot"></span>
-          </span>
-          <span>Deepesh Pankaj</span>
-        </a>
+    <nav class="nav-dock" aria-label="Main Navigation">
+      <a href="index.html" class="brand-monogram" aria-label="Deepesh Kumar Pankaj Home">
+        <span class="monogram-badge">DKP</span>
+        <span class="status-dot-wrapper">
+          <span class="status-ping"></span>
+          <span class="status-dot"></span>
+        </span>
+      </a>
 
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="projects.html" class="nav-link active">Projects</a></li>
-          <li><a href="highlights.html" class="nav-link">Research &amp; Highlights</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="https://github.com/deepeshpankaj01" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub ↗</a></li>
-          <li><a href="#" data-copy-email="deepeshkumar79239@gmail.com" class="nav-link">Contact</a></li>
-        </ul>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="projects.html" class="nav-link active">Projects</a></li>
+        <li><a href="index.html#games" class="nav-link">Games &amp; Labs</a></li>
+        <li><a href="highlights.html" class="nav-link">Highlights &amp; Research</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
 
-        <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
+      <div class="nav-cta-group">
+        <a href="index.html#contact" class="nav-cta-btn">Let's Connect ⚡</a>
+        <a href="https://github.com/deepeshpankaj01" target="_blank" rel="noopener noreferrer" class="nav-icon-link" aria-label="GitHub Profile">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
           </svg>
-        </button>
+        </a>
       </div>
-    </div>
 
-    <!-- Mobile Drawer -->
-    <div class="mobile-nav-drawer">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="projects.html" class="nav-link active">Projects</a>
-      <a href="highlights.html" class="nav-link">Research &amp; Highlights</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="https://github.com/deepeshpankaj01" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub ↗</a>
-      <a href="#" data-copy-email="deepeshkumar79239@gmail.com" class="nav-link">Contact (Copy Email)</a>
-    </div>
+      <button class="mobile-menu-btn" aria-label="Open Navigation Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </nav>
   </header>
 
-  <!-- Main Content -->
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" role="dialog" aria-modal="true">
+    <button class="mobile-close-btn" aria-label="Close Navigation Menu">&times;</button>
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="projects.html" class="nav-link active">Projects</a>
+    <a href="index.html#games" class="nav-link">Games &amp; Labs</a>
+    <a href="highlights.html" class="nav-link">Highlights &amp; Research</a>
+    <a href="index.html#contact" class="nav-link">Contact</a>
+  </div>
+
+  <!-- Main Content Container -->
   <main class="container">
-    <div style="padding-top: 4.5rem; padding-bottom: 2rem;">
-      <h1 style="font-size: 1.8rem; font-weight: 600; color: var(--text-primary); letter-spacing: -0.02em; margin-bottom: 0.5rem;">
-        Engineering Directory
+    <div style="padding-top: 5rem; padding-bottom: 2rem;">
+      <span class="section-telemetry-tag">Engineering Directory // 01</span>
+      <h1 class="section-heading" style="margin-top: 0.5rem; font-size: 2.8rem;">
+        Complete Project Showcase
       </h1>
-      <p style="color: var(--text-secondary); max-width: 680px; font-size: 1rem;">
-        Production software systems, computer vision engines, hyperlocal civic platforms, and interactive WebGL experiences built from first principles.
+      <p class="section-desc" style="font-size: 1.05rem; margin-top: 0.5rem;">
+        Deep dive into all 8+ production systems, computer vision platforms, civic architectures, and interactive browser games.
       </p>
     </div>
 
-    <!-- ========================================================
-         CATEGORY 01: AI & COMPUTER VISION SYSTEMS
-         ======================================================== -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-title-wrap">
-          <span class="section-index">01</span>
-          <h2 class="section-title">AI &amp; Computer Vision Systems</h2>
+    <!-- HUD Filter Tabs -->
+    <div class="filter-tabs" role="tablist" style="margin-bottom: 2.5rem;">
+      <button class="filter-tab active" data-filter="all">All Systems</button>
+      <button class="filter-tab" data-filter="ai">AI &amp; Platforms</button>
+      <button class="filter-tab" data-filter="mobile">Mobile &amp; Web</button>
+      <button class="filter-tab" data-filter="games">Browser Games</button>
+      <button class="filter-tab" data-filter="research">Research</button>
+    </div>
+
+    <div class="bento-grid">
+
+      <!-- HaiPilot -->
+      <article class="bento-card col-span-8" data-category="ai research">
+        <div class="bento-media-wrap">
+          <img src="image/haipilot_preview.png" alt="HaiPilot Preview" loading="lazy" />
         </div>
-      </div>
-
-      <div class="projects-grid">
-        <!-- DrishtiCV -->
-        <article class="project-card">
-          <div class="project-card-header">
-            <div class="project-meta-row">
-              <span class="category-badge">Computer Vision</span>
-              <span class="status-badge">Production</span>
+        <div>
+          <div class="bento-meta-row">
+            <div class="badge-group">
+              <span class="hud-badge featured">AI Platform</span>
+              <span class="hud-badge">Smart Assistant</span>
+              <span class="hud-badge featured">Featured</span>
             </div>
-            <h3 class="project-title">DrishtiCV</h3>
-            <p class="project-summary">
-              End-to-end computer vision pipeline engineered for real-time object detection, multi-object tracking, and region-of-interest (ROI) monitoring. Features automated event logging and a custom desktop analytics interface built with PySide6.
-            </p>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #10B981;">● Live System</span>
           </div>
-
-          <div class="tech-pills">
-            <span class="tech-pill">Python</span>
-            <span class="tech-pill">YOLO</span>
-            <span class="tech-pill">ByteTrack</span>
-            <span class="tech-pill">OpenCV</span>
-            <span class="tech-pill">PySide6</span>
-            <span class="tech-pill">NumPy</span>
-            <span class="tech-pill">PyTest</span>
-          </div>
-
-          <div class="card-links">
-            <a href="https://github.com/deepeshpankaj01/DrishtiCV" target="_blank" rel="noopener noreferrer" class="link-btn primary">
-              GitHub Repository ↗
-            </a>
-          </div>
-        </article>
-
-        <!-- DrishtiFii -->
-        <article class="project-card">
-          <div class="project-card-header">
-            <div class="project-meta-row">
-              <span class="category-badge">Edge AI &amp; Web</span>
-              <span class="status-badge">Production</span>
-            </div>
-            <h3 class="project-title">DrishtiFii</h3>
-            <p class="project-summary">
-              Edge-AI traffic and vehicle analytics engine running directly in the browser with zero server latency. Built on TensorFlow.js and custom computer vision pipelines for real-time vehicle detection and telemetry.
-            </p>
-          </div>
-
-          <div class="card-thumbnail-wrap contain-logo">
-            <img src="image/drishtifii_icon.png" alt="DrishtiFii Vehicle Telemetry Engine" />
-          </div>
-
-          <div class="tech-pills">
-            <span class="tech-pill">TensorFlow.js</span>
-            <span class="tech-pill">JavaScript</span>
-            <span class="tech-pill">HTML5 Canvas</span>
-            <span class="tech-pill">Edge Vision</span>
-          </div>
-
-          <div class="card-links">
-            <a href="https://github.com/deepeshpankaj01/DrishtiFii" target="_blank" rel="noopener noreferrer" class="link-btn primary">
-              GitHub Repository ↗
-            </a>
-          </div>
-        </article>
-
-        <!-- Anuva -->
-        <article class="project-card">
-          <div class="project-card-header">
-            <div class="project-meta-row">
-              <span class="category-badge">Offline-First AI</span>
-              <span class="status-badge">Active Lab</span>
-            </div>
-            <h3 class="project-title">Anuva (ANUVAA)</h3>
-            <p class="project-summary">
-              AI-powered translation and educational accessibility platform designed to convert technical and classroom content into regional Indian languages in real time. Focused on mother-tongue education including Santali and Ol Chiki.
-            </p>
-          </div>
-
-          <div class="tech-pills">
-            <span class="tech-pill">AI / NLP</span>
-            <span class="tech-pill">Python</span>
-            <span class="tech-pill">Translation Pipeline</span>
-            <span class="tech-pill">Web Platform</span>
-          </div>
-
-          <div class="card-links">
-            <a href="https://github.com/deepeshpankaj01/anuvaa" target="_blank" rel="noopener noreferrer" class="link-btn">
-              GitHub Repository ↗
-            </a>
-          </div>
-        </article>
-
-        <!-- HAi PILOT -->
-        <article class="project-card">
-          <div class="project-card-header">
-            <div class="project-meta-row">
-              <span class="category-badge">Clinical AI Decision Support</span>
-              <span class="status-badge">Live System</span>
-            </div>
-            <h3 class="project-title">HAi PILOT</h3>
-            <p class="project-summary">
-              Clinical oncology decision-support prototype built to alleviate high-pressure triage fatigue. Implements deterministic historical case retrieval, ICD-10 categorization, and client-side jsPDF medical report generation.
-            </p>
-          </div>
-
-          <div class="card-thumbnail-wrap contain-logo">
-            <img src="image/haipilot_preview.png" alt="HAi PILOT Clinical Decision Support" />
-          </div>
-
-          <div class="tech-pills">
-            <span class="tech-pill">JavaScript</span>
-            <span class="tech-pill">Clinical AI APIs</span>
-            <span class="tech-pill">jsPDF</span>
-            <span class="tech-pill">ICD-10 Mapping</span>
-            <span class="tech-pill">Vercel</span>
-          </div>
-
-          <div class="card-links">
-            <a href="https://co-pilot-nine.vercel.app/" target="_blank" rel="noopener noreferrer" class="link-btn primary">
-              Live Prototype ↗
-            </a>
-            <a href="https://github.com/deepeshpankaj01/Co-pilot" target="_blank" rel="noopener noreferrer" class="link-btn">
-              GitHub Repository ↗
-            </a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ========================================================
-         CATEGORY 02: FULL-STACK PLATFORMS & CREATIVE STUDIOS
-         ======================================================== -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-title-wrap">
-          <span class="section-index">02</span>
-          <h2 class="section-title">Full-Stack Platforms &amp; Creative Studios</h2>
+          <h3 class="bento-title">HaiPilot (HealthAI)</h3>
+          <p class="bento-desc">
+            Intelligent AI-powered copilot aur clinical automation platform jo complex digital workflows aur real-world healthcare triage ko deterministic historical case retrieval, ICD-10 grounding, aur instant client-side medical reporting ke saath fast banata hai.
+          </p>
         </div>
-      </div>
-
-      <div class="projects-grid">
-        <!-- Panchayat -->
-        <article class="project-card">
-          <div class="project-card-header">
-            <div class="project-meta-row">
-              <span class="category-badge">Civic &amp; Hyperlocal</span>
-              <span class="status-badge">Live System</span>
-            </div>
-            <h3 class="project-title">Panchayat</h3>
-            <p class="project-summary">
-              Location-first community platform engineered for regional and rural India using Flutter and Supabase. Accompanied by a dedicated web showcase page demonstrating the platform's hyperlocal architecture and features.
-            </p>
-          </div>
-
-          <div class="card-thumbnail-wrap contain-logo">
-            <img src="image/panchayat_icon.png" alt="Panchayat Logo" />
-          </div>
-
-          <div class="tech-pills">
-            <span class="tech-pill">Flutter</span>
-            <span class="tech-pill">Supabase</span>
-            <span class="tech-pill">PostgreSQL</span>
-            <span class="tech-pill">Cloudflare Workers</span>
-          </div>
-
-          <div class="card-links">
-            <a href="https://panchayat-web.panchayat-team03.workers.dev/" target="_blank" rel="noopener noreferrer" class="link-btn primary">
-              Live Showcase ↗
-            </a>
-            <a href="https://deepeshpankaj01.github.io/panchayat-legal/" target="_blank" rel="noopener noreferrer" class="link-btn">
-              Legal Portal ↗
-            </a>
-          </div>
-        </article>
-
-        <!-- Fii-Studio / Fiira -->
-        <article class="project-card">
-          <div class="project-card-header">
-            <div class="project-meta-row">
-              <span class="category-badge">Design Engineering</span>
-              <span class="status-badge">Live System</span>
-            </div>
-            <h3 class="project-title">Fii-Studio (Fiira)</h3>
-            <p class="project-summary">
-              Interactive creative studio and design engineering showcase built to present experimental UI architectures, motion systems, and web applications.
-            </p>
-          </div>
-
-          <div class="card-thumbnail-wrap contain-logo">
-            <img src="image/fiira_logo.png" alt="Fiira Logo" />
-          </div>
-
-          <div class="tech-pills">
-            <span class="tech-pill">React / Next.js</span>
-            <span class="tech-pill">Tailwind CSS</span>
-            <span class="tech-pill">Motion Systems</span>
-            <span class="tech-pill">Vercel</span>
-          </div>
-
-          <div class="card-links">
-            <a href="https://fii-studio-beta.vercel.app/" target="_blank" rel="noopener noreferrer" class="link-btn primary">
-              Fii Studio Beta ↗
-            </a>
-            <a href="https://fiira.netlify.app/" target="_blank" rel="noopener noreferrer" class="link-btn">
-              Fiira Live ↗
-            </a>
-            <a href="https://github.com/deepeshpankaj01/Fii-Studio" target="_blank" rel="noopener noreferrer" class="link-btn">
-              GitHub ↗
-            </a>
-          </div>
-        </article>
-
-        <!-- DP Jewels -->
-        <article class="project-card">
-          <div class="project-card-header">
-            <div class="project-meta-row">
-              <span class="category-badge">Luxury E-Commerce</span>
-              <span class="status-badge">Live Storefront</span>
-            </div>
-            <h3 class="project-title">DP Jewels</h3>
-            <p class="project-summary">
-              Bespoke digital storefront and catalog platform crafted for a luxury jewelry brand, featuring high-contrast editorial typography and responsive product views.
-            </p>
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 1rem;">
-            <div class="card-thumbnail-wrap" style="margin-bottom: 0;">
-              <img src="image/dpjewels_preview.jpg" alt="DP Jewels Catalog" />
-            </div>
-            <div class="card-thumbnail-wrap" style="margin-bottom: 0;">
-              <img src="image/dpjewels_founder.jpg" alt="DP Jewels Editorial" />
-            </div>
-          </div>
-
-          <div class="tech-pills">
-            <span class="tech-pill">HTML5</span>
-            <span class="tech-pill">CSS3</span>
-            <span class="tech-pill">JavaScript</span>
-            <span class="tech-pill">Responsive UI</span>
-            <span class="tech-pill">Netlify</span>
-          </div>
-
-          <div class="card-links">
-            <a href="https://dpjewels.netlify.app/" target="_blank" rel="noopener noreferrer" class="link-btn primary">
-              Live Storefront ↗
-            </a>
-            <a href="https://github.com/deepeshpankaj01/dpjewels" target="_blank" rel="noopener noreferrer" class="link-btn">
-              GitHub ↗
-            </a>
-          </div>
-        </article>
-
-        <!-- Sathi -->
-        <article class="project-card">
-          <div class="project-card-header">
-            <div class="project-meta-row">
-              <span class="category-badge">Conversational AI</span>
-              <span class="status-badge">Live App</span>
-            </div>
-            <h3 class="project-title">SATHI (साथी)</h3>
-            <p class="project-summary">
-              Context-aware multi-persona AI companion built on the Anthropic Claude API. Provides adaptive conversational assistance across academic guidance, career direction, and supportive mentoring.
-            </p>
-          </div>
-
-          <div class="card-thumbnail-wrap">
-            <img src="image/sathi_preview.png" alt="Sathi Preview" />
-          </div>
-
-          <div class="tech-pills">
-            <span class="tech-pill">Next.js</span>
-            <span class="tech-pill">TypeScript</span>
-            <span class="tech-pill">Anthropic Claude</span>
-            <span class="tech-pill">Tailwind CSS</span>
-          </div>
-
-          <div class="card-links">
-            <a href="https://sathi-lake.vercel.app/" target="_blank" rel="noopener noreferrer" class="link-btn primary">
-              Live Companion ↗
-            </a>
-            <a href="https://github.com/deepeshpankaj01/Sathi" target="_blank" rel="noopener noreferrer" class="link-btn">
-              GitHub ↗
-            </a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ========================================================
-         CATEGORY 03: INTERACTIVE 3D & BROWSER ARCADE GAMES
-         ======================================================== -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-title-wrap">
-          <span class="section-index">03</span>
-          <h2 class="section-title">Interactive 3D &amp; Web Arcade Games</h2>
+        <div class="bento-links">
+          <a href="https://co-pilot-nine.vercel.app/" target="_blank" rel="noopener noreferrer" class="card-link primary">
+            Live Prototype ↗
+          </a>
+          <a href="https://github.com/deepeshpankaj01/Co-pilot" target="_blank" rel="noopener noreferrer" class="card-link">
+            GitHub Repo ↗
+          </a>
         </div>
-      </div>
+      </article>
 
-      <div class="projects-grid">
-        <!-- AERORUSH: SKYBOUND -->
-        <article class="project-card">
-          <div class="project-card-header">
-            <div class="project-meta-row">
-              <span class="category-badge">3D WebGL Arcade</span>
-              <span class="status-badge">Live Game</span>
+      <!-- DrishtiFii -->
+      <article class="bento-card col-span-4" data-category="ai">
+        <div class="bento-media-wrap contain-mode">
+          <img src="image/drishtifii_icon.png" alt="DrishtiFii AI Vision" loading="lazy" />
+        </div>
+        <div>
+          <div class="bento-meta-row">
+            <div class="badge-group">
+              <span class="hud-badge featured">AI Vision</span>
+              <span class="hud-badge">Intelligent Systems</span>
             </div>
-            <h3 class="project-title">AERORUSH: SKYBOUND</h3>
-            <p class="project-summary">
-              High-speed 3D browser flight and stunt racing game powered by Three.js and WebGL. Engineered with responsive flight physics, procedural obstacle corridors, and smooth 60fps rendering.
-            </p>
           </div>
+          <h3 class="bento-title">DrishtiFii &amp; DrishtiCV</h3>
+          <p class="bento-desc">
+            Next-gen AI aur smart digital service platform jo intelligent vehicle detection, multi-object tracking (YOLO + ByteTrack), aur browser-based edge telemetry par focused hai with zero server latency.
+          </p>
+        </div>
+        <div class="bento-links">
+          <a href="https://github.com/deepeshpankaj01/DrishtiFii" target="_blank" rel="noopener noreferrer" class="card-link primary">
+            DrishtiFii Code ↗
+          </a>
+          <a href="https://github.com/deepeshpankaj01/DrishtiCV" target="_blank" rel="noopener noreferrer" class="card-link">
+            DrishtiCV ↗
+          </a>
+        </div>
+      </article>
 
-          <div class="card-thumbnail-wrap contain-logo">
-            <img src="image/aerorush_icon.png" alt="AeroRush Icon" />
-          </div>
-
-          <div class="tech-pills">
-            <span class="tech-pill">Three.js</span>
-            <span class="tech-pill">WebGL</span>
-            <span class="tech-pill">JavaScript</span>
-            <span class="tech-pill">HTML5 Canvas</span>
-            <span class="tech-pill">Cloudflare Pages</span>
-          </div>
-
-          <div class="card-links">
-            <a href="https://aerorush-skybound.pages.dev/" target="_blank" rel="noopener noreferrer" class="link-btn primary">
-              Play Game ↗
-            </a>
-            <a href="https://github.com/deepeshpankaj01/AERORUSH-SKYBOUND" target="_blank" rel="noopener noreferrer" class="link-btn">
-              GitHub Repo ↗
-            </a>
-          </div>
-        </article>
-
-        <!-- CAMPUS RUSH -->
-        <article class="project-card">
-          <div class="project-card-header">
-            <div class="project-meta-row">
-              <span class="category-badge">Arcade Engine</span>
-              <span class="status-badge">Live Game</span>
+      <!-- Panchayat -->
+      <article class="bento-card col-span-6" data-category="mobile">
+        <div class="bento-media-wrap contain-mode">
+          <img src="image/panchayat_icon.png" alt="Panchayat Logo" loading="lazy" />
+        </div>
+        <div>
+          <div class="bento-meta-row">
+            <div class="badge-group">
+              <span class="hud-badge">Flutter</span>
+              <span class="hud-badge">Supabase</span>
+              <span class="hud-badge">PostgreSQL</span>
+              <span class="hud-badge featured">Location-First</span>
             </div>
-            <h3 class="project-title">CAMPUS RUSH</h3>
-            <p class="project-summary">
-              Fast-paced 2D/2.5D browser arcade runner featuring custom collision physics, progressive difficulty scaling, and instant edge delivery via Cloudflare Workers.
-            </p>
           </div>
+          <h3 class="bento-title">Panchayat</h3>
+          <p class="bento-desc">
+            Rural aur regional India ke liye banaya gaya location-first mobile community platform jo local connectivity, verified Local Government Directory (LGD) governance, aur digital empowerment ko badhata hai.
+          </p>
+        </div>
+        <div class="bento-links">
+          <a href="https://panchayat-web.panchayat-team03.workers.dev/" target="_blank" rel="noopener noreferrer" class="card-link primary">
+            Live Web Showcase ↗
+          </a>
+          <a href="https://deepeshpankaj01.github.io/panchayat-legal/" target="_blank" rel="noopener noreferrer" class="card-link">
+            Legal &amp; Architecture ↗
+          </a>
+        </div>
+      </article>
 
-          <div class="card-thumbnail-wrap contain-logo">
-            <img src="image/campusrush_banner.svg" alt="Campus Rush Banner" />
+      <!-- Fiira -->
+      <article class="bento-card col-span-6 indigo-glow" data-category="mobile ai">
+        <div class="bento-media-wrap contain-mode">
+          <img src="image/fiira_logo.webp" alt="Fiira Logo" onerror="this.onerror=null; this.src='image/fiira_logo.png';" loading="lazy" />
+        </div>
+        <div>
+          <div class="bento-meta-row">
+            <div class="badge-group">
+              <span class="hud-badge featured">Next-Gen Concept</span>
+              <span class="hud-badge">Creator &amp; AI Ecosystem</span>
+            </div>
           </div>
+          <h3 class="bento-title">Fiira &amp; Fii-Studio</h3>
+          <p class="bento-desc">
+            Indian digital market ke liye AI-driven personalization, client-side predictive algorithmic models, aur community-first creator ecosystem platform, designed with experimental interactive UI architectures.
+          </p>
+        </div>
+        <div class="bento-links">
+          <a href="https://fii-studio-beta.vercel.app/" target="_blank" rel="noopener noreferrer" class="card-link primary">
+            Fii Studio Beta ↗
+          </a>
+          <a href="https://fiira.netlify.app/" target="_blank" rel="noopener noreferrer" class="card-link">
+            Fiira Live ↗
+          </a>
+          <a href="https://github.com/deepeshpankaj01/Fii-Studio" target="_blank" rel="noopener noreferrer" class="card-link">
+            GitHub ↗
+          </a>
+        </div>
+      </article>
 
-          <div class="tech-pills">
-            <span class="tech-pill">HTML5 Canvas</span>
-            <span class="tech-pill">JavaScript</span>
-            <span class="tech-pill">Custom Loop</span>
-            <span class="tech-pill">Cloudflare Workers</span>
+      <!-- DP Jewels -->
+      <article class="bento-card col-span-6" data-category="mobile">
+        <div class="bento-media-wrap">
+          <img src="image/dpjewels_preview.webp" alt="DP Jewels Luxury Showcase" onerror="this.onerror=null; this.src='image/dpjewels_preview.jpg';" loading="lazy" />
+        </div>
+        <div>
+          <div class="bento-meta-row">
+            <div class="badge-group">
+              <span class="hud-badge">Web Platform</span>
+              <span class="hud-badge">Brand Experience</span>
+              <span class="hud-badge featured">Live Product</span>
+            </div>
           </div>
+          <h3 class="bento-title">DP Jewels</h3>
+          <p class="bento-desc">
+            Luxury aesthetics, responsive catalog, aur modern user experience ke saath design kiya gaya bespoke digital storefront aur private consultation appointment booking system.
+          </p>
+        </div>
+        <div class="bento-links">
+          <a href="https://dpjewels.netlify.app/" target="_blank" rel="noopener noreferrer" class="card-link primary">
+            Live Storefront ↗
+          </a>
+          <a href="https://github.com/deepeshpankaj01/dpjewels" target="_blank" rel="noopener noreferrer" class="card-link">
+            GitHub ↗
+          </a>
+        </div>
+      </article>
 
-          <div class="card-links">
-            <a href="https://campus-rush.deepeshkumar79239.workers.dev/" target="_blank" rel="noopener noreferrer" class="link-btn primary">
-              Play Game ↗
-            </a>
-            <a href="https://github.com/deepeshpankaj01/CAMPUS-RUSH" target="_blank" rel="noopener noreferrer" class="link-btn">
-              GitHub Repo ↗
-            </a>
+      <!-- Sathi -->
+      <article class="bento-card col-span-6" data-category="ai">
+        <div class="bento-media-wrap">
+          <img src="image/sathi_preview.webp" alt="Sathi Multi-Persona Companion" onerror="this.onerror=null; this.src='image/sathi_preview.png';" loading="lazy" />
+        </div>
+        <div>
+          <div class="bento-meta-row">
+            <div class="badge-group">
+              <span class="hud-badge">Next.js</span>
+              <span class="hud-badge">Claude API</span>
+              <span class="hud-badge featured">Conversational AI</span>
+            </div>
           </div>
-        </article>
-      </div>
-    </section>
+          <h3 class="bento-title">Sathi (साथी)</h3>
+          <p class="bento-desc">
+            Context-aware multi-persona AI companion built on the Anthropic Claude API. Provides adaptive conversational assistance across academic guidance, career direction, and supportive mentoring.
+          </p>
+        </div>
+        <div class="bento-links">
+          <a href="https://sathi-lake.vercel.app/" target="_blank" rel="noopener noreferrer" class="card-link primary">
+            Live Companion ↗
+          </a>
+          <a href="https://github.com/deepeshpankaj01/Sathi" target="_blank" rel="noopener noreferrer" class="card-link">
+            GitHub ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- CampusRush & AeroRush -->
+      <article class="bento-card col-span-6" data-category="games">
+        <div class="bento-media-wrap contain-mode" style="background: linear-gradient(135deg, rgba(112, 0, 255, 0.2), rgba(0, 240, 255, 0.15));">
+          <div style="display: flex; gap: 16px; align-items: center; justify-content: center;">
+            <img src="image/campusrush_banner.svg" alt="Campus Rush" style="max-height: 70px;" loading="lazy" />
+            <img src="image/aerorush_icon.png" alt="AeroRush" style="max-height: 70px;" loading="lazy" />
+          </div>
+        </div>
+        <div>
+          <div class="bento-meta-row">
+            <div class="badge-group">
+              <span class="hud-badge">HTML5 Canvas</span>
+              <span class="hud-badge">Three.js</span>
+              <span class="hud-badge featured">Game Architecture</span>
+            </div>
+          </div>
+          <h3 class="bento-title">CampusRush &amp; AeroRush (3D WebGL)</h3>
+          <p class="bento-desc">
+            High-speed interactive browser games (including <em>CYBERFii: ROBOTAXI OVERDRIVE</em> and <em>AERORUSH: SKYBOUND</em>) jo custom physics, procedural corridors, HUD interfaces, aur smooth 60fps edge rendering ke saath banaye gaye hain.
+          </p>
+        </div>
+        <div class="bento-links">
+          <a href="https://aerorush-skybound.pages.dev/" target="_blank" rel="noopener noreferrer" class="card-link primary">
+            Play AeroRush ↗
+          </a>
+          <a href="https://campus-rush.deepeshkumar79239.workers.dev/" target="_blank" rel="noopener noreferrer" class="card-link">
+            Play CampusRush ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- Anuva -->
+      <article class="bento-card col-span-6" data-category="ai research">
+        <div class="bento-media-wrap contain-mode">
+          <div style="font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--neon-cyan);">
+            ANUVAA // अनुवाद
+          </div>
+        </div>
+        <div>
+          <div class="bento-meta-row">
+            <div class="badge-group">
+              <span class="hud-badge">AI / NLP</span>
+              <span class="hud-badge">Vernacular</span>
+              <span class="hud-badge featured">Active Lab</span>
+            </div>
+          </div>
+          <h3 class="bento-title">Anuva (ANUVAA)</h3>
+          <p class="bento-desc">
+            AI-powered translation and educational accessibility platform designed to convert technical and classroom content into regional Indian languages in real time. Focused on mother-tongue education including Santali and Ol Chiki.
+          </p>
+        </div>
+        <div class="bento-links">
+          <a href="https://github.com/deepeshpankaj01/anuvaa" target="_blank" rel="noopener noreferrer" class="card-link">
+            GitHub Repository ↗
+          </a>
+        </div>
+      </article>
+
+    </div>
   </main>
 
-  <!-- Minimal Footer -->
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <span>&copy; 2026 Deepesh Pankaj. Handcrafted with architectural restraint.</span>
+      <div class="footer-inner">
+        <div class="footer-copy">
+          <span>&copy; 2026 Deepesh Kumar Pankaj. Handcrafted with spatial glassmorphism &amp; architectural precision.</span>
         </div>
-        <ul class="footer-socials">
-          <li><a href="https://github.com/deepeshpankaj01" target="_blank" rel="noopener noreferrer" class="footer-social-link">GitHub</a></li>
-          <li><a href="https://x.com/deepeshpankaj01" target="_blank" rel="noopener noreferrer" class="footer-social-link">X (Twitter)</a></li>
-          <li><a href="https://www.linkedin.com/in/deepesh-pankaj-3ba960225" target="_blank" rel="noopener noreferrer" class="footer-social-link">LinkedIn</a></li>
-          <li><a href="https://www.instagram.com/deepeshpankaj01" target="_blank" rel="noopener noreferrer" class="footer-social-link">Instagram</a></li>
-          <li><a href="mailto:deepeshkumar79239@gmail.com" class="footer-social-link">Email</a></li>
+        <ul class="footer-social-links">
+          <li><a href="https://github.com/deepeshpankaj01" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/deepesh-pankaj-3ba960225" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/deepeshpankaj01" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="mailto:deepeshkumar79239@gmail.com">Email</a></li>
         </ul>
       </div>
     </div>
