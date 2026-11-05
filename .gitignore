@@ -15,6 +15,7 @@ dist-ssr/
 Thumbs.db
 .vscode/
 .idea/
+test-screenshots/
 
 # npm logs
 npm-debug.log*
