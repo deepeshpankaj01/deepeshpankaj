@@ -5,278 +5,197 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Primary SEO -->
-  <title>About &amp; Philosophy — Deepesh Kumar Pankaj</title>
-  <meta name="title" content="About &amp; Philosophy — Deepesh Kumar Pankaj" />
-  <meta name="description" content="Education at LNCT University (BCA), core philosophy, engineering mindset, and technical stack of Deepesh Kumar Pankaj." />
-  <meta name="author" content="Deepesh Kumar Pankaj" />
+  <title>About — Deepesh Pankaj</title>
+  <meta name="title" content="About — Deepesh Pankaj" />
+  <meta name="description" content="Engineering philosophy, systems stack, and background of Deepesh Pankaj — Software Engineer (AI, Computer Vision & Full-Stack Systems)." />
+  <meta name="author" content="Deepesh Pankaj" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://dpportfolioo.netlify.app/about.html" />
-  <meta property="og:title" content="About &amp; Philosophy — Deepesh Kumar Pankaj" />
-  <meta property="og:description" content="Education at LNCT University (BCA), core philosophy, engineering mindset, and technical stack." />
-  <meta property="og:image" content="image/deepesh_portrait_2026.webp" />
+  <meta property="og:title" content="About — Deepesh Pankaj" />
+  <meta property="og:description" content="Engineering philosophy, systems stack, and background of Deepesh Pankaj." />
+  <meta property="og:image" content="image/profile.jpg" />
 
-  <link rel="icon" href="image/deepesh_portrait_2026.webp" type="image/webp" />
+  <link rel="icon" href="image/profile.jpg" type="image/jpeg" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Spatial Particle Canvas & Dynamic Cursor Spotlight -->
-  <canvas id="spatial-canvas"></canvas>
-  <div class="cursor-spotlight"></div>
-
-  <!-- Floating Pill HUD Navbar -->
+  <!-- Top Sticky Navigation Bar -->
   <header class="site-header">
-    <nav class="nav-dock" aria-label="Main Navigation">
-      <a href="index.html" class="brand-monogram" aria-label="Deepesh Kumar Pankaj Home">
-        <span class="monogram-badge">DKP</span>
-        <span class="status-dot-wrapper">
-          <span class="status-ping"></span>
-          <span class="status-dot"></span>
-        </span>
-      </a>
-
-      <ul class="nav-links">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link active">About</a></li>
-        <li><a href="projects.html" class="nav-link">Projects</a></li>
-        <li><a href="index.html#games" class="nav-link">Games &amp; Labs</a></li>
-        <li><a href="highlights.html" class="nav-link">Highlights &amp; Research</a></li>
-        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-      </ul>
-
-      <div class="nav-cta-group">
-        <a href="index.html#contact" class="nav-cta-btn">Let's Connect ⚡</a>
-        <a href="https://github.com/deepeshpankaj01" target="_blank" rel="noopener noreferrer" class="nav-icon-link" aria-label="GitHub Profile">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-          </svg>
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="brand-link" aria-label="Deepesh Pankaj Home">
+          <span class="status-dot-wrapper" title="Available for engineering roles">
+            <span class="status-ping"></span>
+            <span class="status-dot"></span>
+          </span>
+          <span>Deepesh Pankaj</span>
         </a>
-      </div>
 
-      <button class="mobile-menu-btn" aria-label="Open Navigation Menu">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
-    </nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="highlights.html" class="nav-link">Research &amp; Highlights</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="https://github.com/deepeshpankaj01" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub ↗</a></li>
+          <li><a href="#" data-copy-email="deepeshkumar79239@gmail.com" class="nav-link">Contact</a></li>
+        </ul>
+
+        <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav-drawer">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="highlights.html" class="nav-link">Research &amp; Highlights</a>
+      <a href="about.html" class="nav-link active">About</a>
+      <a href="https://github.com/deepeshpankaj01" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub ↗</a>
+      <a href="#" data-copy-email="deepeshkumar79239@gmail.com" class="nav-link">Contact (Copy Email)</a>
+    </div>
   </header>
 
-  <!-- Mobile Drawer -->
-  <div class="mobile-drawer" role="dialog" aria-modal="true">
-    <button class="mobile-close-btn" aria-label="Close Navigation Menu">&times;</button>
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="about.html" class="nav-link active">About</a>
-    <a href="projects.html" class="nav-link">Projects</a>
-    <a href="index.html#games" class="nav-link">Games &amp; Labs</a>
-    <a href="highlights.html" class="nav-link">Highlights &amp; Research</a>
-    <a href="index.html#contact" class="nav-link">Contact</a>
-  </div>
-
-  <!-- Main Content Container -->
+  <!-- Main Content -->
   <main class="container">
-    <div style="padding-top: 5rem; padding-bottom: 2rem;">
-      <span class="section-telemetry-tag">Identity &amp; Philosophy // 01</span>
-      <h1 class="section-heading" style="margin-top: 0.5rem; font-size: 2.8rem;">
-        About, Education &amp; Engineering Mindset
+    <div style="padding-top: 4.5rem; padding-bottom: 2rem;">
+      <h1 style="font-size: 1.8rem; font-weight: 600; color: var(--text-primary); letter-spacing: -0.02em; margin-bottom: 0.5rem;">
+        About &amp; Engineering Philosophy
       </h1>
-      <p class="section-desc" style="font-size: 1.05rem; margin-top: 0.5rem;">
-        Academic background at LNCT University, core principles, and the driving philosophy behind building practical systems.
+      <p style="color: var(--text-secondary); max-width: 680px; font-size: 1rem;">
+        First-principles systems engineering, edge computing, and trust-centric intelligence.
       </p>
     </div>
 
-    <!-- Education & Core Vision -->
-    <section class="section" style="padding-top: 1rem;">
-      <div class="about-hud-grid">
-        <!-- Education Card -->
-        <div class="education-card">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
-            <div>
-              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--neon-cyan); letter-spacing: 0.05em; text-transform: uppercase;">
-                ACADEMIC CREDENTIAL
-              </span>
-              <h2 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; color: #FFFFFF; margin-top: 4px;">
-                Lakshmi Narain College of Technology (LNCT University), Bhopal
-              </h2>
-            </div>
-            <span class="hud-badge featured">Current Student</span>
-          </div>
-
-          <p style="color: var(--text-slate); font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.25rem;">
-            <strong>Bachelor of Computer Applications (BCA)</strong> · Focused on foundational computer science principles, database systems, mathematical logic, and hands-on production application engineering.
-          </p>
-
-          <div style="margin-bottom: 1.25rem;">
-            <h4 style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--neon-cyan); text-transform: uppercase; margin-bottom: 0.5rem;">
-              Core Academic &amp; Technical Focus:
-            </h4>
-            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-              <span class="hud-badge">Artificial Intelligence</span>
-              <span class="hud-badge">Database Management Systems (DBMS)</span>
-              <span class="hud-badge">Discrete Mathematics</span>
-              <span class="hud-badge">Graph Theory</span>
-              <span class="hud-badge">Full-Stack Product Building</span>
-              <span class="hud-badge">Agentic Systems</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Vision Statement Box -->
-        <div>
-          <div class="vision-box" style="margin-top: 0; padding: 1.75rem;">
-            <span style="font-family: var(--font-mono); font-size: 0.76rem; color: #00F0FF; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 8px;">
-              Vision Statement
-            </span>
-            <p style="font-size: 1.2rem; font-weight: 500; color: #FFFFFF; font-style: normal; line-height: 1.6; margin-bottom: 1rem;">
-              "Mera lakshya aise scalable AI products aur digital platforms banana hai jo India aur duniya bhar mein real-world problems ko solve karein."
-            </p>
-            <p style="font-size: 0.88rem; color: var(--text-slate); line-height: 1.6;">
-              Whether addressing healthcare triage through trust-centric clinical algorithms (HaiPilot), bridging rural governance with location-first networks (Panchayat), or exploring the future of generative media (Fiira), I believe in engineering from first principles.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Core Philosophy Cards -->
+    <!-- Narrative & Principles -->
     <section class="section">
-      <div class="section-hud-header">
-        <span class="section-telemetry-tag">Foundational Pillars // 02</span>
-        <h2 class="section-heading">Core Engineering Philosophy</h2>
-        <p class="section-desc">
-          The mental models and disciplines guiding my development workflow every day.
+      <div class="narrative-block">
+        <h2>Engineering from First Principles</h2>
+        <p>
+          I design and build software systems where <strong>performance, determinism, and craftsmanship</strong> are non-negotiable. Rather than relying on superficial abstractions or boilerplate templates, I architect software from first principles: whether that means building real-time multi-object tracking pipelines in Python with OpenCV and ByteTrack, compiling edge-AI models into the browser using TensorFlow.js with zero server latency, or rendering 60fps 3D aerial simulations with WebGL and Three.js.
+        </p>
+        <p>
+          My work spans production AI systems, location-first civic platforms for rural India, and high-performance web applications. I care deeply about minimalist product design, sub-100ms load times, and interfaces that respect human attention.
         </p>
       </div>
 
-      <div class="bento-grid">
-        <div class="bento-card col-span-4">
-          <h3 class="bento-title" style="color: var(--neon-cyan);">⚡ Learn Fast</h3>
-          <p class="bento-desc">
-            Technology moves rapidly. I specialize in quickly breaking down novel frameworks, LLM tooling, and distributed backend concepts into clean, production-ready code.
-          </p>
-        </div>
+      <div class="narrative-block">
+        <h2>Core Technical Stack &amp; Competencies</h2>
+        <div class="stack-categories">
+          <!-- AI & Vision -->
+          <div class="stack-group">
+            <div class="stack-group-title">AI &amp; Computer Vision</div>
+            <div class="tech-pills" style="margin-bottom: 0;">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">YOLO (v8/v11)</span>
+              <span class="tech-pill">ByteTrack</span>
+              <span class="tech-pill">OpenCV</span>
+              <span class="tech-pill">TensorFlow.js</span>
+              <span class="tech-pill">PySide6 / Qt</span>
+              <span class="tech-pill">NumPy</span>
+            </div>
+          </div>
 
-        <div class="bento-card col-span-4">
-          <h3 class="bento-title" style="color: var(--electric-indigo);">🧠 Think Differently</h3>
-          <p class="bento-desc">
-            Rejecting cookie-cutter templates in favor of bespoke spatial HUD design, deterministic logic, and high-performance user experiences that respect human cognitive attention.
-          </p>
-        </div>
+          <!-- Full-Stack & Platforms -->
+          <div class="stack-group">
+            <div class="stack-group-title">Full-Stack &amp; Systems</div>
+            <div class="tech-pills" style="margin-bottom: 0;">
+              <span class="tech-pill">TypeScript / JavaScript</span>
+              <span class="tech-pill">React.js / Next.js</span>
+              <span class="tech-pill">Flutter</span>
+              <span class="tech-pill">Node.js</span>
+              <span class="tech-pill">PostgreSQL / Supabase</span>
+              <span class="tech-pill">Cloudflare Workers</span>
+            </div>
+          </div>
 
-        <div class="bento-card col-span-4">
-          <h3 class="bento-title" style="color: #34D399;">🛠️ Build Practically</h3>
-          <p class="bento-desc">
-            True mastery comes from shipping real software. Over 6 deployed applications running on Vercel, Netlify, and Cloudflare Pages prove real-world execution capability.
-          </p>
-        </div>
+          <!-- Graphics & Interaction -->
+          <div class="stack-group">
+            <div class="stack-group-title">Interactive 3D &amp; Graphics</div>
+            <div class="tech-pills" style="margin-bottom: 0;">
+              <span class="tech-pill">Three.js</span>
+              <span class="tech-pill">WebGL</span>
+              <span class="tech-pill">HTML5 Canvas</span>
+              <span class="tech-pill">Custom Game Loops</span>
+              <span class="tech-pill">Motion Systems</span>
+            </div>
+          </div>
 
-        <div class="bento-card col-span-6">
-          <h3 class="bento-title" style="color: #F59E0B;">🚀 Leadership Mindset</h3>
-          <p class="bento-desc">
-            Participating in and leading hackathon squads, contributing to tech communities (Google Developer Groups, DevFest, Claude Ambassador circles), and presenting at national summits.
-          </p>
-        </div>
-
-        <div class="bento-card col-span-6">
-          <h3 class="bento-title" style="color: #00F0FF;">📈 Continuous Growth</h3>
-          <p class="bento-desc">
-            Rigorous systems and algorithm training at ABV-IIITM Gwalior, venture design cohorts at the Ministry of Education IDE Bootcamp, and ongoing research publication.
-          </p>
+          <!-- Infrastructure & Tools -->
+          <div class="stack-group">
+            <div class="stack-group-title">Infrastructure &amp; Tooling</div>
+            <div class="tech-pills" style="margin-bottom: 0;">
+              <span class="tech-pill">Git / GitHub Actions</span>
+              <span class="tech-pill">Vercel &amp; Netlify</span>
+              <span class="tech-pill">Cloudflare Pages</span>
+              <span class="tech-pill">Linux Systems</span>
+              <span class="tech-pill">PyTest / Unit Testing</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Complete Telemetry Matrix -->
-    <section class="section">
-      <div class="section-hud-header">
-        <span class="section-telemetry-tag">Telemetry Matrix // 03</span>
-        <h2 class="section-heading">Full Technical Stack</h2>
+    <!-- Contact & Inquiries -->
+    <section class="section" id="contact">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-index">02</span>
+          <h2 class="section-title">Direct Inquiries &amp; Collaboration</h2>
+        </div>
       </div>
 
-      <div class="telemetry-matrix">
-        <div class="telemetry-panel">
-          <div class="telemetry-title">
-            <span style="color: #00F0FF;">[01]</span> Mobile &amp; Full-Stack Systems
-          </div>
-          <div class="telemetry-skills-wrap">
-            <span class="telemetry-pill">Flutter</span>
-            <span class="telemetry-pill">Supabase</span>
-            <span class="telemetry-pill">PostgreSQL</span>
-            <span class="telemetry-pill">HTML5 Canvas</span>
-            <span class="telemetry-pill">Modern CSS3</span>
-            <span class="telemetry-pill">JavaScript (ES6+)</span>
-            <span class="telemetry-pill">TypeScript</span>
-            <span class="telemetry-pill">Python</span>
-            <span class="telemetry-pill">React.js / Next.js</span>
-            <span class="telemetry-pill">Cloudflare Workers</span>
-          </div>
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.75rem;">
+        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+          I am currently open to engineering roles, systems research collaborations, and select technical consulting in Computer Vision, AI systems architecture, and high-craft frontend engineering.
+        </p>
+
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <a href="mailto:deepeshkumar79239@gmail.com" class="btn btn-primary">
+            Send Email (deepeshkumar79239@gmail.com)
+          </a>
+          <button class="btn btn-secondary" data-copy-email="deepeshkumar79239@gmail.com">
+            Copy Email Address
+          </button>
         </div>
 
-        <div class="telemetry-panel">
-          <div class="telemetry-title">
-            <span style="color: #7000FF;">[02]</span> AI &amp; Agentic Workflows
-          </div>
-          <div class="telemetry-skills-wrap">
-            <span class="telemetry-pill">Generative AI</span>
-            <span class="telemetry-pill">Prompt Engineering</span>
-            <span class="telemetry-pill">LLM Integration</span>
-            <span class="telemetry-pill">AI Data Annotation</span>
-            <span class="telemetry-pill">AI Model Evaluation</span>
-            <span class="telemetry-pill">Antigravity Workflows</span>
-            <span class="telemetry-pill">Claude Code CLI</span>
-            <span class="telemetry-pill">Computer Vision</span>
-            <span class="telemetry-pill">TensorFlow.js</span>
-          </div>
-        </div>
-
-        <div class="telemetry-panel">
-          <div class="telemetry-title">
-            <span style="color: #00F0FF;">[03]</span> Creative &amp; 3D Web
-          </div>
-          <div class="telemetry-skills-wrap">
-            <span class="telemetry-pill">HTML5 Canvas</span>
-            <span class="telemetry-pill">Three.js</span>
-            <span class="telemetry-pill">WebGL Graphics</span>
-            <span class="telemetry-pill">Spatial UI Design</span>
-            <span class="telemetry-pill">Glassmorphism HUD</span>
-            <span class="telemetry-pill">Responsive Physics</span>
-            <span class="telemetry-pill">60fps Game Loops</span>
-          </div>
-        </div>
-
-        <div class="telemetry-panel">
-          <div class="telemetry-title">
-            <span style="color: #10B981;">[04]</span> Product, Strategy &amp; Research
-          </div>
-          <div class="telemetry-skills-wrap">
-            <span class="telemetry-pill">Startup Ideation</span>
-            <span class="telemetry-pill">Rapid Prototyping</span>
-            <span class="telemetry-pill">Hackathon Execution</span>
-            <span class="telemetry-pill">Technical Paper Writing</span>
-            <span class="telemetry-pill">First-Principles Thinking</span>
-            <span class="telemetry-pill">Community Leadership</span>
-          </div>
+        <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border-subtle); display: flex; gap: 1.5rem; flex-wrap: wrap;">
+          <a href="https://github.com/deepeshpankaj01" target="_blank" rel="noopener noreferrer" class="link-btn">
+            GitHub: @deepeshpankaj01 ↗
+          </a>
+          <a href="https://www.linkedin.com/in/deepesh-pankaj-3ba960225" target="_blank" rel="noopener noreferrer" class="link-btn">
+            LinkedIn: Deepesh Pankaj ↗
+          </a>
+          <a href="https://x.com/deepeshpankaj01" target="_blank" rel="noopener noreferrer" class="link-btn">
+            X (Twitter): @deepeshpankaj01 ↗
+          </a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Site Footer -->
+  <!-- Minimal Footer -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-inner">
-        <div class="footer-copy">
-          <span>&copy; 2026 Deepesh Kumar Pankaj. Handcrafted with spatial glassmorphism &amp; architectural precision.</span>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span>&copy; 2026 Deepesh Pankaj. Handcrafted with architectural restraint.</span>
         </div>
-        <ul class="footer-social-links">
-          <li><a href="https://github.com/deepeshpankaj01" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/deepesh-pankaj-3ba960225" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="https://www.instagram.com/deepeshpankaj01" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-          <li><a href="mailto:deepeshkumar79239@gmail.com">Email</a></li>
+        <ul class="footer-socials">
+          <li><a href="https://github.com/deepeshpankaj01" target="_blank" rel="noopener noreferrer" class="footer-social-link">GitHub</a></li>
+          <li><a href="https://x.com/deepeshpankaj01" target="_blank" rel="noopener noreferrer" class="footer-social-link">X (Twitter)</a></li>
+          <li><a href="https://www.linkedin.com/in/deepesh-pankaj-3ba960225" target="_blank" rel="noopener noreferrer" class="footer-social-link">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/deepeshpankaj01" target="_blank" rel="noopener noreferrer" class="footer-social-link">Instagram</a></li>
+          <li><a href="mailto:deepeshkumar79239@gmail.com" class="footer-social-link">Email</a></li>
         </ul>
       </div>
     </div>
